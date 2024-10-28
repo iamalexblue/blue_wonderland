@@ -5,7 +5,7 @@ import type { ThemeConfig } from '~/types'
 
 export const defaultConfig: ThemeConfig = {
   site: {
-    title: '瑞蓝奇域',
+    title: '瑞蓝幻境',
     subtitle: 'blue_wonderland',
     author: 'realexblue',
     description: '你的气质里，藏着你读过的书、走过的路和爱过的人。',
