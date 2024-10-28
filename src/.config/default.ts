@@ -22,7 +22,7 @@ export const defaultConfig: ThemeConfig = {
       },
       {
         name: 'twitter',
-        href: 'https://github.com/realexblue',
+        href: 'https://x.com/realexblue',
       },
       {
         name: 'mastodon',
