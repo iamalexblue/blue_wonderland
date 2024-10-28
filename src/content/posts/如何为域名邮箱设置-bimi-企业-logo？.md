@@ -1,9 +1,9 @@
-+++
-title = "如何为域名邮箱设置 BIMI 企业 Logo"
-date = "2024-09-02T15:56:02.576Z"
-draft = false
-lastmod = "2024-09-02T16:28:59.571Z"
-+++
+---
+title: 如何为域名邮箱设置 BIMI 企业 Logo
+pubDate: 2024-09-02
+categories: ['邮箱']
+description: "域名邮箱设置 BIMI 企业 Logo"
+---
 
 # 如何为域名邮箱设置 BIMI 企业 Logo？
 
