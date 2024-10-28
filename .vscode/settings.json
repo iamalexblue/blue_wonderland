@@ -52,5 +52,12 @@
     "scss",
     "pcss",
     "postcss"
+  ],
+  "frontMatter.git.enabled": true,
+  "frontMatter.content.publicFolder": "public",
+  "frontMatter.content.pageFolders": [
+    {
+      "path": "[[workspace]]"
+    }
   ]
 }
