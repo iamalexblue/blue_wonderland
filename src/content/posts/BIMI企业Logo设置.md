@@ -1,9 +1,11 @@
 ---
-title: 如何为域名邮箱设置 BIMI 企业 Logo
+title: 如何为域名邮箱设置 BIMI 企业 Logo？
 pubDate: 
 categories: ['note']
 description: "I'm Alex Blue"
 ---
+
+# 如何为域名邮箱设置 BIMI 企业 Logo？
 
 # 如何为域名邮箱设置 BIMI 企业 Logo？
 
@@ -45,7 +47,7 @@ description: "I'm Alex Blue"
 https://raw.githubusercontent.com/iamalexblue/fluoxetine12_pic_repo/master/Resources/Email_BIMI_Logo.svg
 ```
 
-![Email_BIMI_Logo](https://raw.githubusercontent.com/iamalexblue/fluoxetine12_pic_repo/master/Resources/Email_BIMI_Logo.svg)
+![Email_BIMI_Logo](./attachments/Email_BIMI_Logo.svg)
 
 ### 四、商标注册与VMC认证
 如果您希望在Gmail等平台上展示Logo认证，您需要注册商标并获得VMC认证。
@@ -66,5 +68,5 @@ v=BIMI1;l=https://raw.githubusercontent.com/iamalexblue/fluoxetine12_pic_repo/ma
 - [ BIMI - 为域名邮箱的邮件添加企业 LOGO ](https://www.httpsmail.com/bimi.html)
 - [在域名提供商处添加 BIMI TXT 记录](https://support.google.com/a/answer/10911321?hl=zh-Hans)
 
-### 版权信息：
-> 本文由本站原创，如需转载，请注明出处或联系作者获得授权。
+
+![](./attachments/QmQDB6tnCVhyEsEFbCtWBrdE5wdADx7oJ8tCVKUTBEiskC)

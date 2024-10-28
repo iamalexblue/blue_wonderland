@@ -1,7 +1,7 @@
 ---
 title: Hey Alex Blue Here!
-pubDate: 2021-10-31
-categories: ['realexblue']
+pubDate: 
+categories: ['note']
 description: "I'm Alex Blue"
 ---
 
