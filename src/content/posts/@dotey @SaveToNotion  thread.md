@@ -1,6 +1,6 @@
 ---
-title: Hey Alex Blue Here!
-pubDate: 
+title: dotey SaveToNotion thread
+pubDate:
 categories: ['note']
 description: "I'm Alex Blue"
 ---

@@ -1,6 +1,6 @@
 ---
-title: 忘了在这里更新了，感觉到声音闷应该就是在不清楚的情况下，无意间打开了游戏模式，应该是为了低延迟舍弃了音质。音乐模式的音质还是不错的，特此更新一下。<br><br><div class="rsshub-quote">转发 <a href="https://m.okjike.
-pubDate: 
+title: Pipods
+pubDate:
 categories: ['note']
 description: "I'm Alex Blue"
 ---

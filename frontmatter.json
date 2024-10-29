@@ -51,7 +51,8 @@
       ]
     }
   ],
-  "frontMatter.framework.startCommand": "pnpm run dev",
+  "frontMatter.framework.startCommand": "npm run build",
   "frontMatter.dashboard.openOnStart": true,
-  "frontMatter.git.enabled": true
+  "frontMatter.git.enabled": true,
+  "frontMatter.website.host": "https://iamalex.blue"
 }

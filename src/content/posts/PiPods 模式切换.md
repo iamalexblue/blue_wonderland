@@ -1,6 +1,6 @@
 ---
-title: ![FnE3vJyaYAAZDlV](.
-pubDate: 
+title: PiPods 模式切换
+pubDate:
 categories: ['note']
 description: "I'm Alex Blue"
 ---

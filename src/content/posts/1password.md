@@ -1,7 +1,7 @@
 ---
-title: ![Fslhmd2zHtgdNp3PP9br2LV66gwGv3.jpg](.
-pubDate: 
-categories: ['note']
+title: 1password
+pubDate:
+categories: ['note']1password
 description: "I'm Alex Blue"
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: Hey Alex Blue Here!
-pubDate: 
+title: CryingMan Congrats
+pubDate:
 categories: ['note']
 description: "I'm Alex Blue"
 ---
