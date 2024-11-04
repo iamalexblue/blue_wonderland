@@ -1,11 +1,9 @@
 ---
 title: 如何为域名邮箱设置 BIMI 企业 Logo？
-pubDate: 
+pubDate:
 categories: ['note']
 description: "I'm Alex Blue"
 ---
-
-# 如何为域名邮箱设置 BIMI 企业 Logo？
 
 # 如何为域名邮箱设置 BIMI 企业 Logo？
 
@@ -25,6 +23,7 @@ description: "I'm Alex Blue"
 ### 三、重要细节
 
 1. **按照 Google 对SVG Logo 的要求，其需要重点注意：**
+
 - SVG必须是SVG Tiny Portable/Secure版本。
 - 文件背景应为纯色，透明背景可能不显示正确。
 - Logo应为正方形，图形居中。
@@ -43,16 +42,17 @@ description: "I'm Alex Blue"
 - SVG 文件应包含 <desc> 元素（说明）以提供无障碍功能。
 
 处理完成之后的 `.svg` 文件链接格式应当如下所示：
+
 ```
 https://raw.githubusercontent.com/iamalexblue/fluoxetine12_pic_repo/master/Resources/Email_BIMI_Logo.svg
 ```
 
-![Email_BIMI_Logo](./attachments/Email_BIMI_Logo.svg)
-
 ### 四、商标注册与VMC认证
+
 如果您希望在Gmail等平台上展示Logo认证，您需要注册商标并获得VMC认证。
 
 ### 五、添加DNS解析记录
+
 设置特定的DNS 'TXT'记录，指向您的Logo文件和可选的VMC认证地址。
 
 ```
@@ -60,13 +60,12 @@ v=BIMI1;l=https://raw.githubusercontent.com/iamalexblue/fluoxetine12_pic_repo/ma
 ```
 
 ### 六、结尾：
+
 通过BIMI，您的电子邮件将更加个性化和专业，吸引收件人关注的同时，强化品牌形象。这些简单的步骤将引领您进入电子邮件识别的新时代。
 
 > References:
+
 - [使用 BIMI 在电子邮件中添加品牌徽标](https://support.google.com/a/answer/10911320?hl=zh-Hans&sjid=15642333964812356936-AP)
 - [为 BIMI 做好准备：准备您的徽标](https://www.gworg.com/problems/1504.html)
 - [ BIMI - 为域名邮箱的邮件添加企业 LOGO ](https://www.httpsmail.com/bimi.html)
 - [在域名提供商处添加 BIMI TXT 记录](https://support.google.com/a/answer/10911321?hl=zh-Hans)
-
-
-![](./attachments/QmQDB6tnCVhyEsEFbCtWBrdE5wdADx7oJ8tCVKUTBEiskC)
