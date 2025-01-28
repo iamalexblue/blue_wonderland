@@ -13,7 +13,7 @@
     {
       "name": "default",
       "pageBundle": false,
-      "previewPath": "'posts'",
+      "previewPath": "'blog'",
       "filePrefix": null,
       "clearEmpty": true,
       "fields": [
@@ -40,17 +40,32 @@
           "name": "heroImage",
           "type": "image",
           "isPreviewImage": true
+        }
+      ]
+    },
+    {
+      "name": "new post",
+      "pageBundle": false,
+      "fields": [
+        {
+          "title": "title",
+          "name": "title",
+          "type": "string"
         },
         {
-          "title": "Categories",
-          "name": "categories",
-          "type": "list",
-          "default": ["note"]
-        },
-        {
-          "title": "Last Modified",
-          "name": "lastmod",
+          "title": "pubDate",
+          "name": "pubDate",
           "type": "datetime"
+        },
+        {
+          "title": "categories",
+          "name": "categories",
+          "type": "categories"
+        },
+        {
+          "title": "description",
+          "name": "description",
+          "type": "string"
         }
       ]
     }

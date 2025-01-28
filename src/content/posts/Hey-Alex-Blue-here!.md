@@ -1,8 +1,8 @@
 ---
 title: Hey Alex Blue Here!
-pubDate: 
+pubDate: 2023-01-09
 categories: ['note']
-description: "I'm Alex Blue"
+description: "Hey Alex Blue Here!"
 ---
 
 ![169920264494420211217_001016.jpg](https://raw.githubusercontent.com/iamalexblue/fluoxetine12_pic_repo/master/Utools/169920264494420211217_001016.jpg)
@@ -10,6 +10,7 @@ description: "I'm Alex Blue"
 **我是 Alex Blue**
 
 Happier than ever. 💙
+
 - 工具控，数字移民，巨硬粉丝。
 - 邮箱收集者，Mozilla 拥护者（我爱 Firefox），拥抱开源。
 - 喜欢写代码和博客以及各种折腾
