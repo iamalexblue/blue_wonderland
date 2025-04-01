@@ -5,54 +5,55 @@
   "frontMatter.content.publicFolder": "public",
   "frontMatter.content.pageFolders": [
     {
+      "path": "[[workspace]]",
+      "title": "[[workspace]]"
+    },
+    {
+      "path": "[[workspace]]"
+    },
+    {
       "title": "posts",
       "path": "[[workspace]]/src/content/posts"
     }
   ],
   "frontMatter.taxonomy.contentTypes": [
     {
-      "name": "default",
+      "name": "Touch a new post",
       "pageBundle": false,
-      "previewPath": "'posts'",
-      "filePrefix": null,
+      "previewPath": "'blog'",
+      "filePrefix": true,
       "clearEmpty": true,
       "fields": [
         {
-          "title": "Title",
+          "title": "title",
           "name": "title",
-          "type": "string",
-          "single": true
+          "type": "string"
         },
         {
-          "title": "Description",
+          "title": "pubDate",
+          "name": "pubDate",
+          "type": "datetime"
+        },
+        {
+          "title": "categories",
+          "name": "categories",
+          "type": "categories"
+        },
+        {
+          "title": "description",
           "name": "description",
           "type": "string"
         },
         {
-          "title": "Publishing date",
-          "name": "pubDate",
-          "type": "datetime",
-          "default": "{{now}}",
-          "isPublishDate": true
-        },
-        {
-          "title": "Content preview",
-          "name": "heroImage",
-          "type": "image",
-          "isPreviewImage": true
-        },
-        {
-          "title": "Categories",
-          "name": "categories",
-          "type": "list",
-          "default": ["note"]
-        },
-        {
-          "title": "Last Modified",
+          "title": "lastmod",
           "name": "lastmod",
           "type": "datetime"
         }
       ]
     }
-  ]
+  ],
+  "frontMatter.framework.startCommand": "npm run build",
+  "frontMatter.dashboard.openOnStart": true,
+  "frontMatter.git.enabled": true,
+  "frontMatter.website.host": "https://iamalex.blue"
 }
