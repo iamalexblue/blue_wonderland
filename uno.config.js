@@ -1,4 +1,3 @@
-import type { Theme } from 'unocss/preset-uno'
 import presetAttributify from '@unocss/preset-attributify'
 import transformerDirectives from '@unocss/transformer-directives'
 import {
@@ -24,11 +23,17 @@ const cssExtend = {
 
   ':where(:not(pre):not(a) > code)': {
     'white-space': 'normal',
+    'word-wrap': 'break-word',
     'padding': '2px 4px',
     'color': '#c7254e',
     'font-size': '90%',
     'background-color': '#f9f2f4',
     'border-radius': '4px',
+  },
+
+  'li': {
+    'white-space': 'normal',
+    'word-wrap': 'break-word',
   },
 }
 
@@ -53,12 +58,14 @@ export default defineConfig({
     presetTypography({ cssExtend }),
     presetAttributify(),
     presetIcons({ scale: 1.2, warn: true }),
-    presetTheme<Theme>({ theme: {
-      dark: {
-        colors: { ...colorsDark, shadow: '#FFFFFF0A' },
-        // TODO 需要配置代码块颜色
+    presetTheme ({
+      theme: {
+        dark: {
+          colors: { ...colorsDark, shadow: '#FFFFFF0A' },
+          // TODO 需要配置代码块颜色
+        },
       },
-    } }),
+    }),
   ],
   theme: {
     colors: { ...colorsLight, shadow: '#0000000A' },
