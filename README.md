@@ -2,8 +2,8 @@
   瑞蓝幻境 - Blue wonderland
 </h1>
 
-<div style="text-align: center;">
-    <img src="https://raw.githubusercontent.com/iamalexblue/fluoxetine12_pic_repo/refs/heads/master/Resources/avatar_realexblue.jpg" alt="realexblue•瑞瑞蓝" style="width: 10%;" />
+<div align="center">
+  <img src="https://raw.githubusercontent.com/iamalexblue/fluoxetine12_pic_repo/refs/heads/master/Resources/avatar_realexblue.jpg" alt="realexblue•瑞瑞蓝" width="200">
 </div>
 
 <h2 align="center">
@@ -17,5 +17,3 @@
 
 **希望能写点有用的东西，或者废话**
 </h4>
-
-
