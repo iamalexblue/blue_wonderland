@@ -2,7 +2,8 @@
 title: 如何为域名邮箱设置 BIMI 企业 Logo
 pubDate: 2024-07-09T12:07:44.000Z
 categories:
-    - note
+    - tech
+    - tools
 description: 在数字化时代，电子邮件是企业与客户交流的重要渠道。为展示品牌形象，提升邮件识别度，一种名为BIMI的技术为域名邮箱带来了新的变革。
 ---
 

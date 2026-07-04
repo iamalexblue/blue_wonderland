@@ -2,7 +2,8 @@
 title: Alex's xLog Issues | Issue 1. Hello World!
 pubDate: 2023-01-09
 categories:
-    - note
+    - thoughts
+    - social-media
 description: I'm Alex Blue
 lastmod: 2025-04-01T15:56:03.378Z
 ---

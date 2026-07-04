@@ -1,7 +1,9 @@
 ---
 title: Hey Alex Blue Here!
 pubDate: 2023-01-09
-categories: ['note']
+categories:
+    - life
+    - social-media
 description: "Hey Alex Blue Here!"
 ---
 

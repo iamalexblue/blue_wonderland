@@ -2,7 +2,9 @@
 title: Mac mini M4 本地 AI 翻译全栈折腾记
 pubDate: 2026-07-05
 categories:
-  - note
+    - tech
+    - tools
+    - ai
 description: 从零开始在 Apple Silicon 上部署本地大模型，接入浏览器划词翻译，并一路优化到开机自愈
 lastmod: 2026-07-04T17:40:12.105Z
 ---

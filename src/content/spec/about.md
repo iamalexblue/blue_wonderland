@@ -1,9 +1,10 @@
 ---
 title: 关于
 pubDate: 2024-12-06
+lastmod: 2026-07-04T19:32:45.453Z
 ---
 
-# 🍋 Hi, Alex Blue here!
+## 🍋 Hi, Alex Blue here!
 
 > If you lose yourself, it's never too late to find yourself again.
 

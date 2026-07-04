@@ -1,7 +1,10 @@
 ---
 title: Logseq 和数据安全、便利和隐私的思考
 pubDate: 2022-03-20
-categories: ['note']
+categories:
+    - tech
+    - thoughts
+    - tools
 description: "Logseq 引发的数据安全、便利和隐私的思考"
 ---
 

@@ -2,7 +2,9 @@
 title: 谈谈腾讯 - Talk about Tencent
 pubDate: 2021-11-07T12:11:57.000Z
 categories:
-    - note
+    - tech
+    - thoughts
+    - ramblings
 description: 谈谈腾讯 - Talk about Tencent
 ---
 

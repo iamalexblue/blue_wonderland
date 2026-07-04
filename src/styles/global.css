@@ -22,3 +22,15 @@ html {
   --at-apply: 'ease-in-out duration-300ms';
   --at-apply: 'hover:(c-background bg-primary decoration-primary)';
 }
+
+/* 归档/分类列表中的标题比页面主标题小一号 */
+h3.post-title {
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+/* 归档/分类列表中的日期统一小号 + 低调 */
+section li time {
+  font-size: 0.8rem;
+  opacity: 0.55;
+}

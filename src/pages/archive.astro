@@ -34,14 +34,14 @@ function getListItem(post: Post): ListItem {
 ---
 
 <LayoutDefault>
-  <div flex="~ col gap-4">
+  <div flex="~ col gap-8">
     {
       yearMap.map(([year, posts]) => (
         <section>
           <h2 class="post-title">{year}</h2>
-          <ul class="pl-6" flex="~ col gap-4">
+          <ul class="pl-6" flex="~ col gap-5">
             {posts.map(({ title, href, date }) => (
-              <li>
+              <li flex="~ col gap-1">
                 <h3 class="post-title">
                   <a href={href}>{title}</a>
                 </h3>

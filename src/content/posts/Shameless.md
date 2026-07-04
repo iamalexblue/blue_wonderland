@@ -2,8 +2,8 @@
 title: Shameless
 pubDate: 2024-04-26T12:18:50.000Z
 categories:
-    - note
-    - twitter
+    - film
+    - thoughts
 description: Shameless
 ---
 
