@@ -7,8 +7,6 @@ description: I'm Alex Blue
 lastmod: 2025-04-01T15:56:03.378Z
 ---
 
-# Alex's xLog Issues | Issue 1. Hello World!
-
 我是 Alex Blue
 
 - Happier than ever. 💙

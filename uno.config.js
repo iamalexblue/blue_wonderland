@@ -35,6 +35,27 @@ const cssExtend = {
     'white-space': 'normal',
     'word-wrap': 'break-word',
   },
+
+  '.prose h1': {
+    'font-size': '1.75em',
+    'font-weight': '700',
+    'margin': '1em 0 0.5em',
+  },
+  '.prose h2': {
+    'font-size': '1.35em',
+    'font-weight': '700',
+    'margin': '1.25em 0 0.5em',
+  },
+  '.prose h3': {
+    'font-size': '1.15em',
+    'font-weight': '700',
+    'margin': '1em 0 0.5em',
+  },
+  '.prose h4': {
+    'font-size': '1.05em',
+    'font-weight': '700',
+    'margin': '0.75em 0 0.5em',
+  },
 }
 
 export default defineConfig({
@@ -72,7 +93,7 @@ export default defineConfig({
     fontFamily: fonts,
   },
   shortcuts: [
-    ['post-title', 'text-5 font-bold lh-7.5 m-0'],
+    ['post-title', 'text-7 font-bold lh-7.5 m-0'],
   ],
   transformers: [transformerDirectives(), transformerVariantGroup()],
   safelist: [

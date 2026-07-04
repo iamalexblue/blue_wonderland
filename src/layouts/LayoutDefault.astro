@@ -16,6 +16,7 @@ const dark = themeConfig.appearance.theme === 'dark'
 <html lang={lang} class:list={['animation-prepared', { dark }]}>
   <head>
     <slot name="seo"> <SiteSeo /> </slot>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-gb-web@latest/style.css" />
     <LaTeX />
     <Analytics />
     <ThemeScript />
