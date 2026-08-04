@@ -1,0 +1,85 @@
+---
+// 文章目录（TOC）：展示 h2/h3 标题，锚点跳转
+interface Props {
+  headings: Array<{ depth: number; slug: string; text: string }>
+}
+
+const { headings } = Astro.props
+const toc = headings.filter((h) => h.depth === 2 || h.depth === 3)
+---
+
+{
+  toc.length > 1 && (
+    <nav class="toc" aria-label="目录">
+      <p class="toc-title">目录</p>
+      <ul>
+        {toc.map((h) => (
+          <li class:list={[h.depth === 3 && 'toc-sub']}>
+            <a href={`#${h.slug}`}>{h.text}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  )
+}
+
+<style>
+  .toc {
+    margin: 1.5rem 0 2.5rem;
+    padding: 0.9rem 1.25rem 1rem;
+    border: 1px solid var(--prose-borders);
+    border-radius: 0.4rem;
+    background: rgba(128, 128, 128, 0.04);
+  }
+
+  html.dark .toc {
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .toc-title {
+    margin: 0 0 0.5rem;
+    font-weight: 700;
+    font-size: 0.9em;
+    letter-spacing: 0.05em;
+    opacity: 0.75;
+  }
+
+  .toc ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .toc a {
+    font-size: 0.85em;
+    line-height: 1.6;
+    opacity: 0.8;
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .toc a:hover {
+    opacity: 1;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .toc .toc-sub {
+    padding-left: 1.1rem;
+  }
+
+  .toc .toc-sub a {
+    font-size: 0.78em;
+    opacity: 0.65;
+  }
+
+  /* 锚点跳转时标题不被页面顶部遮住 */
+  :global(.prose h2),
+  :global(.prose h3) {
+    scroll-margin-top: 4.5rem;
+  }
+</style>

@@ -1,15 +1,18 @@
 ---
 import PostMeta from '~/components/PostMeta.astro'
+import TableOfContents from '~/components/TableOfContents.astro'
 import type { Post } from '~/types'
 
 interface Props {
   post: Post
+  headings?: Array<{ depth: number; slug: string; text: string }>
 }
 
-const { post } = Astro.props
+const { post, headings = [] } = Astro.props
 ---
 
 <article class="prose">
   <PostMeta post={post} />
+  <TableOfContents headings={headings} />
   <slot />
 </article>

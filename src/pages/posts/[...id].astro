@@ -24,7 +24,7 @@ export const getStaticPaths = (async () => {
 type Props = InferGetStaticPropsType<typeof getStaticPaths>
 
 const { entry, prev, next } = Astro.props
-const { Content } = await render(entry)
+const { Content, headings } = await render(entry)
 const { translate: t } = Astro.locals
 
 function getUrl(id: string) {
@@ -35,7 +35,7 @@ function getUrl(id: string) {
 <LayoutDefault>
   <SiteSeo slot="seo" title={entry.data.title} desc={entry.data.description} banner={entry.data.banner} />
 
-  <LayoutPost post={entry}>
+  <LayoutPost post={entry} headings={headings}>
     <Content />
   </LayoutPost>
 

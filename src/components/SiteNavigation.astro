@@ -1,5 +1,6 @@
 ---
 import { themeConfig } from '~/.config'
+import ThemeToggle from '~/components/ThemeToggle.astro'
 
 const { navLinks, socialLinks } = themeConfig.site
 const { translate: t } = Astro.locals
@@ -17,7 +18,7 @@ const { translate: t } = Astro.locals
       ))
     }
   </ul>
-  <ul flex="~ row gap-1 justify-center">
+  <ul flex="~ row gap-1 justify-center items-center">
     {
       socialLinks.map(({ href, name }) => (
         <li>
@@ -27,5 +28,8 @@ const { translate: t } = Astro.locals
         </li>
       ))
     }
+    <li>
+      <ThemeToggle />
+    </li>
   </ul>
 </nav>

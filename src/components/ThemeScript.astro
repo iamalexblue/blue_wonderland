@@ -1,33 +1,39 @@
 ---
-import { themeConfig } from "~/.config";
+import { themeConfig } from '~/.config'
 
-const theme = themeConfig.appearance.theme;
+const theme = themeConfig.appearance.theme
 ---
 
 <script is:inline define:vars={{ theme }}>
+  function getStoredTheme() {
+    try {
+      return localStorage.getItem('theme')
+    } catch {
+      return null
+    }
+  }
+
   function updateTheme(theme) {
+    // 用户手动选择优先，其次回退到配置（system）
+    const resolved = getStoredTheme() || theme
     // Check if theme is system
-    if (theme === "system") {
+    if (resolved === 'system') {
       // Check OS preference
-      const prefersDark = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      ).matches;
-      document.documentElement.classList.toggle("dark", prefersDark);
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+      document.documentElement.classList.toggle('dark', prefersDark)
     } else {
       // Set theme directly
-      document.documentElement.classList.toggle("dark", theme === "dark");
+      document.documentElement.classList.toggle('dark', resolved === 'dark')
     }
   }
 
   // Initial theme setup
-  updateTheme(theme);
+  updateTheme(theme)
 
   // Listen for OS theme changes
-  window
-    .matchMedia("(prefers-color-scheme: dark)")
-    .addEventListener("change", (e) => {
-      if (theme === "system") {
-        document.documentElement.classList.toggle("dark", e.matches);
-      }
-    });
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if ((getStoredTheme() || theme) === 'system') {
+      document.documentElement.classList.toggle('dark', e.matches)
+    }
+  })
 </script>
