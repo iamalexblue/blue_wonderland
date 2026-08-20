@@ -1,7 +1,7 @@
 {
   "$schema": "https://frontmatter.codes/frontmatter.schema.json",
   "frontMatter.framework.id": "astro",
-  "frontMatter.preview.host": "http://localhost:4321",
+  "frontMatter.preview.host": "http://127.0.0.1:4321",
   "frontMatter.content.publicFolder": "public",
   "frontMatter.content.pageFolders": [
     {
@@ -52,7 +52,7 @@
       ]
     }
   ],
-  "frontMatter.framework.startCommand": "npm run build",
+  "frontMatter.framework.startCommand": "pnpm run dev",
   "frontMatter.dashboard.openOnStart": true,
   "frontMatter.git.enabled": true,
   "frontMatter.website.host": "https://iamalex.blue"

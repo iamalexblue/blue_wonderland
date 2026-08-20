@@ -11,6 +11,11 @@ import { themeConfig } from './src/.config'
 // https://astro.build/config
 export default defineConfig({
   site: themeConfig.site.website,
+  server: {
+    // 强制绑定 IPv4 回环地址，避免 Node 在 Windows 上只监听 [::1]
+    // 导致浏览器访问 localhost 时 ERR_CONNECTION_REFUSED
+    host: '127.0.0.1',
+  },
   prefetch: true,
   base: '/',
   markdown: {
