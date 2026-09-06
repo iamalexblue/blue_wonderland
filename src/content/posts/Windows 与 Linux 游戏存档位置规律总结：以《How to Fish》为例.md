@@ -44,7 +44,7 @@ description: 以《How to Fish》为例，对比 Windows 与 Linux（Flatpak Ste
 **Linux (Flatpak Steam) 存档路径 =**
 `~/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/<游戏AppID>/pfx/drive_c/users/steamuser/` + **该游戏在 Windows 上的存档相对路径**
 
-> **关键一步**：先查游戏在 Windows 上的存档路径（PCGamingWiki 等网站通常有记录），然后把 `C:\Users\你的用户名\` 替换成上面的虚拟路径即可。
+> **关键一步**：先查游戏在 Windows 上的存档路径（[PCGamingWiki](https://www.pcgamingwiki.com/wiki/How_to_Fish) 等网站通常有记录），然后把 `C:\Users\你的用户名\` 替换成上面的虚拟路径即可。
 
 ## 补充：两个实用技巧
 
@@ -70,7 +70,11 @@ description: 以《How to Fish》为例，对比 Windows 与 Linux（Flatpak Ste
 
 通用做法只需两步：
 
-1.  先在 PCGamingWiki 或搜索引擎确认游戏在 Windows 下的存档路径
+1.  先在 [PCGamingWiki](https://www.pcgamingwiki.com/wiki/How_to_Fish) 或搜索引擎确认游戏在 Windows 下的存档路径
 2.  把 `C:\Users\<用户名>\` 替换成虚拟前缀 `~/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/<AppID>/pfx/drive_c/users/steamuser/`
 
 如果你用的是非 Flatpak 的原生 Linux Steam，去掉开头的 `.var/app/com.valvesoftware.Steam/` 即可，后面的路径完全一样。
+
+## 参考
+
+- [PCGamingWiki: How to Fish](https://www.pcgamingwiki.com/wiki/How_to_Fish)——本文存档路径数据来源，可按游戏名查询任意游戏的 Windows 存档位置
