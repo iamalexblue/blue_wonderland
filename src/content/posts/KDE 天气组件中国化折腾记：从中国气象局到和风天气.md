@@ -1,11 +1,12 @@
 ---
 title: KDE 天气组件中国化折腾记：从中国气象局到和风天气
 pubDate: 2026-09-07
+modDate: 2026-11-14
 categories:
   - tech
   - tools
 description: KDE 桌面天气组件搜不到中国城市？用 plasma-ions-china 给 KWin 装上中国气象局和和风天气两个数据源，并修复和风 JWT 认证缺失 iss 的上游 bug
-lastmod: 2026-09-06T22:41:13.820Z
+lastmod: 2026-11-14T11:56:38.000Z
 date: 2026-09-06T22:41:12.359Z
 ---
 
@@ -153,3 +154,42 @@ QT_LOGGING_RULES="org.kde.weather.ion.qweather.debug=true" plasmoidviewer -a org
 - 修的上游 bug（缺 `iss`）已经提了 [issue](https://github.com/arenekosreal/plasma-ions-china/issues/5)，等作者合并前先本地打补丁用着
 
 > 后记：这 bug 属于"新用户必踩"那种——只要和风还强制 `iss`，每个新配 qweather 的人都会撞上 401。如果你的发行版打包的是旧版 plasma-ions-china，用之前记得确认有没有这个修复。
+
+## 后记二：Plasma 6.8 又把它崩了
+
+写完这篇不到两个月，Tumbleweed 例行把 Plasma 拉到 6.8.0，天气组件又挂了。这次比上回 401 惨得多：plasmashell 直接崩溃，整个桌面跟着消失，系统卡死到只能强制重启。急救手段很糙——把 `/usr/lib64/qt6/plugins/plasma/weather_ions/` 下的 `nmccn.so` 和 `qweather.so` 挪进收纳目录，组件数据源切回 BBC，桌面总算消停了。当时的打算是等上游适配 6.8 再说。
+
+这次崩的根因跟认证没关系，是 KDE 6.8 动了 ion 的 API：`FutureDayForecast` 的默认构造和 `setMonthDay()`/`setWeekDay()` 都被删了，只剩 `explicit FutureDayForecast(const QDateTime &timestamp)` 一种构造方式。我的 `.so` 是拿 6.7 的头文件编的，装进 6.8 的 plasmashell 里属于 ABI 级不兼容，加载即崩，连发网络请求那步都走不到。上游在十月中的 v0.1.3 修掉了这个问题（[1d5b55e](https://github.com/arenekosreal/plasma-ions-china/commit/1d5b55ed72c22822db5c8a482f29022457674a00)，对应 [issue #6](https://github.com/arenekosreal/plasma-ions-china/issues/6)）：cmake 阶段检测 `PlasmaWeather_VERSION`，≥ 6.8.0 就加一个 `TIMESTAMP_USE_QDATETIME` 宏，代码里用 `#ifdef` 分叉出两种构造写法。更省心的是，上次 issue #5 提的 `iss` bug 也被官方吸收成了 `PLASMA_IONS_CHINA_QWEATHER_ISS` 选项（c6cc28f），本地补丁正式退役。
+
+### 凭据丢了，从二进制里挖回来
+
+重新编译本身很顺利，依赖包都还在，但撞上一个新问题：和风那套凭据丢了。当时的 cmake 命令没留档，KID、项目 ID、API Host 虽然都还在和风控制台里躺着，可重新登录翻一遍实在麻烦。盯着禁用时收起来的旧 `qweather.so`，我想起一件事：这些值全是 `QStringLiteral` 常量，会以 UTF-16 字符串的形式编进二进制。一条命令就能挖出来：
+
+```bash
+# -el = 提取 16-bit little-endian 字符串，正好是 UTF-16
+strings -el -n 4 qweather.so | grep -E '^[A-Z0-9]{10}$|qweatherapi'
+# XXXXXXXXXX   <- 10 位 ID，KID 和项目 ID 之一
+# YYYYYYYYYY   <- 另一个 10 位 ID
+# QZZZZZZZZZ   <- Q 开头的开发者 ID，也就是 iss
+# https://xxxx.re.qweatherapi.com
+```
+
+API Host 和 Q 开头的开发者 ID 一眼就能认出来，麻烦的是剩下两个 ID——哪个是 KID、哪个是项目 ID（sub），看不出来。干脆实测：用 Python 的 `cryptography` 库照 ion 的同款逻辑拼 JWT（Ed25519 签名、base64url 编码、`iat`/`exp` 直接抄源码默认值），拿两个 ID 的两种排列分别打一遍 GeoAPI，返回 200 的那个排列就是答案。顺手还验证了这套凭据隔了两个多月依然活着，省得白编译一轮。
+
+### kwriteconfig6 的新坑
+
+装好新 `.so`，最后一步是把组件配置里的 `provider` 从 `bbcukmet` 切回 `qweather`。想着 `kwriteconfig6` 有 `--group` 参数，按老写法来：
+
+```bash
+kwriteconfig6 --file plasma-org.kde.plasma.desktop-appletsrc \
+  --group "Containments][26][Applets][143][Configuration][WeatherStation" \
+  --key provider qweather
+```
+
+结果 KF6 已经不认 `A][B` 这种嵌套写法了：原来的组一个字没动，反倒往文件末尾追加了一个满是 `\x5d` 转义的垃圾组。KF6 里嵌套组得一层一个 `--group` 地传。我的修法更简单粗暴：停掉 plasmashell，用 sed 或 python 直接替换文件里那两行 `provider=`，再启动。对 appletsrc 这种大嵌套 INI，直接改文件其实比 kwriteconfig6 更可控。
+
+### 这次是备份脚本救的场
+
+整个过程我一点不慌，因为动手前后各打了一份快照——之前写的备份小脚本会把 `plasma-org.kde.plasma.desktop-appletsrc`、`plasmashellrc`、`plasmarc`、`kwinrc`、`kglobalshortcutsrc`、`kdeglobals` 六个核心配置拷进 `~/.local/state/plasma-config-backups/<时间戳-标签>/`，还顺手记一份当时装了哪些第三方部件的清单。真出事就 `plasma-config-restore`：它会停掉 plasmashell、回填文件、再拉起来，覆盖前还会把现场另存一份 pre-restore 副本，反悔都留了后路。Plasma 大版本升级后折腾组件的风险高了一档，这种习惯这时候就显出价值了。
+
+重启之后，面板和托盘两个天气组件都正常吐出了惠州的天气，plasmashell 一直没再崩过。回头看，这次崩溃就是"旧插件遇上新桌面"的 ABI 级不兼容，配置层面没得救，只能等上游适配后重新编译。所以如果你也装了这套 ion，记得 Plasma 大版本升级后要跟着重编——别学我，先崩一次桌面才想起来。
